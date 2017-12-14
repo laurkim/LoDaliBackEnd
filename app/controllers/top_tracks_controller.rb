@@ -1,0 +1,2 @@
+class TopTracksController < ApplicationController
+end
