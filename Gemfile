@@ -11,6 +11,7 @@ gem 'pry'
 gem 'figaro'
 gem 'rest-client'
 gem 'jwt'
+gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
