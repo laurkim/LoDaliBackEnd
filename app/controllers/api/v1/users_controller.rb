@@ -44,7 +44,14 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    binding.pry
+    encrypted_user_id = params["jwt"]
+    user_id = JWT.decode(encrypted_user_id, ENV["MY_SECRET"], ENV["EGGS"])
+    @user = User.find_by(id: user_id[0]["user_id"])
+
+    jwt_payload = {:user_id => @user.id}
+    jwt = JWT.encode(jwt_payload, ENV["MY_SECRET"], ENV["EGGS"])
+    serialized_user = UserSerializer.new(@user).attributes
+    render json: {currentUser: serialized_user, code: jwt}
   end
 
 end
