@@ -13,11 +13,12 @@ Rails.application.routes.draw do
       get 'login', to: 'logins#create'
       post 'home', to: 'users#create'
       get 'current_user', to: 'logins#show'
+      post 'fetch_user', to: 'users#show'
 
-      get 'songs', to: 'songs#create'
+      get 'top_tracks', to: 'top_tracks#create'
       get 'artists', to: 'artists#create'
       # get 'related_artists', to: 'related_artists#create'
-      get 'top_tracks', to: 'top_tracks#create'
+      # get 'songs', to: 'songs#create'
     end
   end
 end

@@ -26,10 +26,10 @@ class Api::V1::UsersController < ApplicationController
       href: user_params["href"],
       uri: user_params["uri"]
     )
-    
+
     payload = {:access_token => auth_params["access_token"]}
-    refresh_payload = {:refresh_token => auth_params["refresh_token"]}
     token = JWT.encode(payload, ENV["MY_SECRET"], ENV["EGGS"])
+    refresh_payload = {:refresh_token => auth_params["refresh_token"]}
     refresh_token = JWT.encode(refresh_payload, ENV["MY_SECRET"], ENV["EGGS"])
 
     @user.update(
@@ -38,8 +38,13 @@ class Api::V1::UsersController < ApplicationController
     )
 
     jwt_payload = {:user_id => @user.id}
-    jwt = JWT.encode jwt_payload, ENV["MY_SECRET"], ENV["EGGS"]
+    jwt = JWT.encode(jwt_payload, ENV["MY_SECRET"], ENV["EGGS"])
     serialized_user = UserSerializer.new(@user).attributes
     render json: {currentUser: serialized_user, code: jwt}
   end
+
+  def show
+    binding.pry
+  end
+
 end
