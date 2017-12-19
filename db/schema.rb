@@ -28,8 +28,7 @@ ActiveRecord::Schema.define(version: 20171219163535) do
 
   create_table "personality_insights", force: :cascade do |t|
     t.integer "user_id"
-    t.string "username"
-    t.string "password"
+    t.json "insight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

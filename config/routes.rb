@@ -6,11 +6,9 @@ Rails.application.routes.draw do
       post 'home', to: 'users#create'
       get 'current_user', to: 'logins#show'
       post 'fetch_user', to: 'users#show'
-
       get 'top_tracks', to: 'top_tracks#create'
       get 'artists', to: 'artists#create'
-      # get 'related_artists', to: 'related_artists#create'
-      # get 'songs', to: 'songs#create'
+      get 'personality_insights', to: 'personality_insights#create'
     end
   end
 end
