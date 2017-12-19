@@ -1,0 +1,2 @@
+class PersonalityInsight < ApplicationRecord
+end

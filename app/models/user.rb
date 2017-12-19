@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :top_tracks
+  has_many :personality_insights
 
   def access_token_expired?
     (Time.now - self.updated_at) > 3300

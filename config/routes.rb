@@ -1,4 +1,5 @@
 # Rails.application.routes.draw do
+  resources :personality_insights
 #   resources :top_tracks
 #   resources :logins
 #   resources :songs
@@ -8,6 +9,7 @@
 # end
 
 Rails.application.routes.draw do
+  resources :personality_insights
   namespace :api do
     namespace :v1 do
       get 'login', to: 'logins#create'
