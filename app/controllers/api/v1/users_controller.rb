@@ -18,7 +18,6 @@ class Api::V1::UsersController < ApplicationController
     user_response = RestClient.get('https://api.spotify.com/v1/me', header)
     user_params = JSON.parse(user_response.body)
 
-
     @user = User.find_or_create_by(
       username: user_params["id"],
       display_name: user_params["display_name"],
