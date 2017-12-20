@@ -1,6 +1,5 @@
 class Api::V1::PersonalityInsightsController < ApplicationController
   def create
-    debugger
     content = params[:q]
     username = ENV["USERNAME"]
     password = ENV["PASSWORD"]
