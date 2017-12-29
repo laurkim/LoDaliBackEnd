@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :top_artists
-  resources :track_features
-  resources :personality_insights
   namespace :api do
     namespace :v1 do
       get 'login', to: 'logins#create'
@@ -13,6 +10,7 @@ Rails.application.routes.draw do
       get 'personality_insights', to: 'personality_insights#create'
       get 'track_features', to: 'track_features#create'
       get 'top_artists', to: 'top_artists#create'
+      get 'recommended_playlists', to: 'recommended_playlists#create'
     end
   end
 end
