@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20171229211827) do
 
   create_table "recommended_playlists", force: :cascade do |t|
     t.integer "user_id"
+    t.string "playlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
