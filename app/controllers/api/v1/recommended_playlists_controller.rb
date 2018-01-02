@@ -3,7 +3,7 @@ class Api::V1::RecommendedPlaylistsController < ApplicationController
     # creates tracks for new playlist based on user's listening habits
     body = {track_ids: params[:q].chomp('"').reverse.chomp('"').reverse}
     decoded = JWT.decode(my_user.access_token, ENV["MY_SECRET"], ENV["EGGS"])
-    header = {'Authorization': "Bearer " + decoded[0]["access_token"]}
+    header = {'Authorization': "Bearer " + decoded[0]["token"]}
     recommended_playlist_response = RestClient.get("https://api.spotify.com/v1/recommendations?seed_tracks=#{body[:track_ids]}", header)
     recommended_playlist_params = JSON.parse(recommended_playlist_response.body)
     render json: {playlist: recommended_playlist_params}
@@ -13,7 +13,7 @@ class Api::V1::RecommendedPlaylistsController < ApplicationController
     # creates new empty playlist on user's Spotify account
     decoded = JWT.decode(my_user.access_token, ENV["MY_SECRET"], ENV["EGGS"])
     header = {
-      'Authorization': "Bearer " + decoded[0]["access_token"],
+      'Authorization': "Bearer " + decoded[0]["token"],
       'Content-Type': 'application/json',
     }
     body = {
@@ -34,7 +34,7 @@ class Api::V1::RecommendedPlaylistsController < ApplicationController
   body = {"uris": params[:q].split(",")}
   decoded = JWT.decode(my_user.access_token, ENV["MY_SECRET"], ENV["EGGS"])
   header = {
-    'Authorization': "Bearer " + decoded[0]["access_token"],
+    'Authorization': "Bearer " + decoded[0]["token"],
     'Content-Type': 'application/json',
   }
   @playlist = RecommendedPlaylist.find_by(user_id: my_user.id)

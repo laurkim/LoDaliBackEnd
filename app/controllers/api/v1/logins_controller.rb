@@ -1,4 +1,6 @@
 class Api::V1::LoginsController < ApplicationController
+  skip_before_action :authorized, only: [:create]
+
   def create
     query_params = {
       client_id: ENV["CLIENT_ID"],
