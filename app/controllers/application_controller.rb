@@ -54,12 +54,4 @@ class ApplicationController < ActionController::API
       my_user.update(access_token: encodedAccess)
     end
   end
-
-  # private
-  #
-  # def my_user
-  #   decoded = JWT.decode(request.headers['Authorization'], ENV["MY_SECRET"], ENV["EGGS"])
-  #   decoded_id = decoded[0]['user_id']
-  #   currentUser = User.find_by(id: decoded_id)
-  # end
 end
