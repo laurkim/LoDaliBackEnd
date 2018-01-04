@@ -17,7 +17,7 @@ class Api::V1::RecommendedPlaylistsController < ApplicationController
       'Content-Type': 'application/json',
     }
     body = {
-      "name": "Sonder Generated Playlist",
+      "name": "Sonder App Playlist",
       "public": true
     }
     new_playlist_response = RestClient.post("https://api.spotify.com/v1/users/#{my_user.username}/playlists", body.to_json, header)

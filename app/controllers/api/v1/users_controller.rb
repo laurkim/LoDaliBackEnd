@@ -45,7 +45,6 @@ class Api::V1::UsersController < ApplicationController
       spotify_url: user_data["external_urls"]["spotify"],
       href: user_data["href"],
       uri: user_data["uri"]
-      # image: user_data["images"][0]["url"]
     }
   end
 end
