@@ -41,7 +41,7 @@ class ApplicationController < ActionController::API
   def authorized
     logged_in? ?
     check_for_refresh(my_user) :
-    (render json: {message: "Not welcome" }, status: 401)
+    (render json: {message: "Not Welcome" }, status: 401)
   end
 
   def check_for_refresh(my_user)

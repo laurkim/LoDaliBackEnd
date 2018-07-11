@@ -34,7 +34,6 @@ class Api::V1::UsersController < ApplicationController
     payload = {user_id: user.id}
     jwt = issue_token(payload)
     serialized_user = UserSerializer.new(user).attributes
-    # { token: token, currentUser: newUser }
     {currentUser: serialized_user, code: jwt}
   end
 
