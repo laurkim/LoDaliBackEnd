@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
   end
 
   def decode(jwt_token)
-    my_algorithm = { algorithm: ENV["EGGS"]}
+    my_algorithm = { algorithm: ENV["EGGS"] }
     JWT.decode(jwt_token, ENV["MY_SECRET"], true, my_algorithm)[0]
   end
 
@@ -23,7 +23,6 @@ class ApplicationController < ActionController::API
 
   def my_user
     authenticate_or_request_with_http_token do |jwt_token, options|
-      # binding.pry
       begin
         decoded_token = decode(jwt_token)
       rescue JWT::DecodeError
