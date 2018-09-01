@@ -1,5 +1,10 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:index, :create]
+
+  def index
+    @users = User.all
+    render json: @users
+  end
 
   def create
     auth_params = SpotifyAdapter.login(params[:code])
