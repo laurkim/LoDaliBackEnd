@@ -1,4 +1,8 @@
-This is a Ruby on Rails API back end for Sonder, an application that authorizes a user through their existing Spotify account and compiles a personality analysis based on the user's listening habits. This API has been deployed to Heroku and can be found [here](https://sonder-app-api.herokuapp.com/api/v1/users).  The front end code, build in React and Redux, as well as a link to the working demo can be found at [this](https://github.com/laurkim/SonderFrontEnd) repository. 
+This is a Ruby on Rails API back end for Sonder, an application that authorizes a user through their existing Spotify account and compiles a personality analysis based on the user's listening habits. 
+
+*This API has been deployed to Heroku and can be found [here](https://sonder-app-api.herokuapp.com/api/v1/users).* 
+
+The front end code, build in React and Redux, as well as a link to the working demo can be found at [this](https://github.com/laurkim/SonderFrontEnd) repository. 
 
 The database is built on PostgreSQL. The domain for this application is comprised of Login (for authorization and authentication through Spotify OAuth2), Users, Track Features, Top Tracks, Top Artists, and Personality Insights.
 
