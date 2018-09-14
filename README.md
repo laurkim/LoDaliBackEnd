@@ -1,3 +1,5 @@
+# Sonder
+
 This is a Ruby on Rails API back end for Sonder, an application that authorizes a user through their existing Spotify account and compiles a personality analysis based on the user's listening habits. 
 
 **This API has been deployed to Heroku and can be found _[here](https://sonder-app-api.herokuapp.com/api/v1/users)_.** 
